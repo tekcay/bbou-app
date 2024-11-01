@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="496.0" prefWidth="381.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tekcay.bbouapp.windows.AddAlimentLoader">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
+
+    <Label fx:id="nameLabel" contentDisplay="RIGHT" text="Nom * :">
+      <graphic>
+      
+          <TextField fx:id="nameField" promptText="nom" />
+      </graphic></Label>
+    <Label fx:id="proteinesLabel" contentDisplay="RIGHT" text="protéines (g) * :">
+      <graphic>
+          <TextField fx:id="proteinesField" />
+      </graphic></Label>
+    <Label fx:id="glucidesLabel" contentDisplay="RIGHT" text="glucides (g) * :">
+      <graphic>
+          <TextField fx:id="glucidesField" />
+      </graphic></Label>
+    <Label fx:id="lipidesLabel" contentDisplay="RIGHT" text="lipides (g) * :">
+      <graphic>
+          <TextField fx:id="lipidesField" />
+      </graphic></Label>
+    <Label fx:id="kcalLabel" contentDisplay="RIGHT" text="calories (kcal) :">
+      <graphic>
+          <TextField fx:id="kcalField" promptText="optionnel" />
+      </graphic></Label>
+
+    <Button onAction="#onAddButtonClick" text="Ajouter" />
+</VBox>
