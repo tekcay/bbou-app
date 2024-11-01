@@ -38,15 +38,12 @@ public class AddAliment {
 
     @FXML
     protected void onAddButtonClick() {
-        SimpleAliment simpleAliment = new SimpleAliment(0, nameField.getText(), getValue(kcalField), getValue(proteinesField), getValue(glucidesField), getValue(lipidesField));
+        SimpleAliment simpleAliment = SimpleAliment.build(0, nameField, glucidesField, proteinesField, lipidesField, kcalField);
+        System.out.println(simpleAliment);
     }
 
     @FXML
     private GridPane pane = init();
-
-    private static int getValue(TextField field) {
-        return Integer.getInteger(field.getText());
-    }
 
     private GridPane init() {
         GridPane grid = new GridPane();

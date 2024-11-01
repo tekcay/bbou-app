@@ -9,26 +9,26 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
     </padding>
 
-    <Label fx:id="nameLabel" contentDisplay="RIGHT" text="Nom :">
+    <Label fx:id="nameLabel" contentDisplay="RIGHT" text="Nom * :">
       <graphic>
       
           <TextField fx:id="nameField" promptText="nom" />
       </graphic></Label>
-    <Label fx:id="kcalLabel" contentDisplay="RIGHT" text="calories (kcal) :">
-      <graphic>
-          <TextField fx:id="kcalField" />
-      </graphic></Label>
-    <Label fx:id="proteinesLabel" contentDisplay="RIGHT" text="protéines (g) :">
+    <Label fx:id="proteinesLabel" contentDisplay="RIGHT" text="protéines (g) * :">
       <graphic>
           <TextField fx:id="proteinesField" />
       </graphic></Label>
-    <Label fx:id="glucidesLabel" contentDisplay="RIGHT" text="glucides (g) :">
+    <Label fx:id="glucidesLabel" contentDisplay="RIGHT" text="glucides (g) * :">
       <graphic>
           <TextField fx:id="glucidesField" />
       </graphic></Label>
-    <Label fx:id="lipidesLabel" contentDisplay="RIGHT" text="lipides (g) :">
+    <Label fx:id="lipidesLabel" contentDisplay="RIGHT" text="lipides (g) * :">
       <graphic>
           <TextField fx:id="lipidesField" />
+      </graphic></Label>
+    <Label fx:id="kcalLabel" contentDisplay="RIGHT" text="calories (kcal) :">
+      <graphic>
+          <TextField fx:id="kcalField" promptText="optionnel" />
       </graphic></Label>
 
     <Button onAction="#onAddButtonClick" text="Ajouter" />
