@@ -6,4 +6,6 @@ module com.tekcay.bbouapp {
 
     opens com.tekcay.bbouapp to javafx.fxml, com.google.gson;
     exports com.tekcay.bbouapp;
+    exports com.tekcay.bbouapp.windows;
+    opens com.tekcay.bbouapp.windows to com.google.gson, javafx.fxml;
 }

@@ -1,8 +1,10 @@
-package com.tekcay.bbouapp;
+package com.tekcay.bbouapp.windows;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+import com.tekcay.bbouapp.SimpleAliment;
+import com.tekcay.bbouapp.SimpleAlimentUtils;
+import com.tekcay.bbouapp.Utils;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -11,12 +13,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AddAliment {
+public class AddAlimentLoader {
 
     @FXML
     private Label nameLabel = new Label("Nom :");
@@ -47,33 +48,10 @@ public class AddAliment {
     @FXML
     protected void onAddButtonClick() throws IOException {
         SimpleAliment simpleAliment = SimpleAlimentUtils.build(0, nameField, glucidesField, proteinesField, lipidesField, kcalField);
-        serialize(simpleAliment);
+        Utils.serialize(simpleAliment);
 
         String json = simpleAliment.serialize();
         System.out.println(json);
-    }
-
-    protected List<SimpleAliment> deserialize() {
-        Gson gson = new GsonBuilder().create();
-
-        try (Reader reader = new BufferedReader(new FileReader("data/aliments.json"))) {
-            SimpleAliment[] aliments = gson.fromJson(reader, SimpleAliment[].class);
-            return Arrays.stream(aliments).toList();
-        } catch (IOException e) {
-            return new ArrayList<>();
-        }
-    }
-
-    protected void serialize(SimpleAliment simpleAliment) throws IOException {
-        List<SimpleAliment> storedAliments = new ArrayList<>(deserialize());
-        storedAliments.add(simpleAliment);
-        SimpleAliment[] aliments = storedAliments.toArray(SimpleAliment[]::new);
-
-        Gson gson = new GsonBuilder().create();
-
-        try (Writer writer = new FileWriter("data/aliments.json")) {
-            gson.toJson(aliments, writer);
-        }
     }
 
     @FXML
